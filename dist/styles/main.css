@@ -2,3 +2,8 @@ ng-map {
   height: 300px;
   margin: 20px 0;
   border: 1px solid #000; }
+
+.mapDiv {
+  height: 300px;
+  width: 600px;
+  margin: 0 auto; }
