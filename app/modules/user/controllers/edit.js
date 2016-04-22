@@ -7,9 +7,10 @@ class EditController {
 
     this._UserService.isLoggedIn()
       .then((response) => {
+        console.log(response);
         this.user = response;
-        this.profile = this._UserService.getProfile();
-        console.log(this.profile);
+        this.profile = this._UserService.getProfile(this.user);
+        // console.log(this.profile);
       })
       .catch((error) => {
         this._$state.go("login");

@@ -1,1 +1,39 @@
-Here's my view!
+<div class="page-header">
+  <h1>Locations <small>{{ locationsCtrl.user.password.email }}</small><button type="submit" class="btn btn-default pull-right" ui-sref="profile">Profile</button></h1>
+</div>
+
+<form ng-submit="locationsCtrl.addLocation()">
+  <div class="form-group">
+    <label for="exampleInputPassword1">Name</label>
+    <input type="text" class="form-control" placeholder="Name" ng-model="locationsCtrl.location.name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Description</label>
+    <input type="text" class="form-control" placeholder="Description" ng-model="locationsCtrl.location.description">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Address</label>
+    <input type="text" class="form-control" placeholder="Address" ng-model="locationsCtrl.location.address">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">City</label>
+    <input type="text" class="form-control" placeholder="City" ng-model="locationsCtrl.location.city">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">State</label>
+    <input type="text" class="form-control" placeholder="State" ng-model="locationsCtrl.location.state">
+  </div>
+  <button type="submit" class="btn btn-default">Add Location</button>
+</form>
+
+
+
+<ng-map
+  center="[{{locationsCtrl.lat}}, {{locationsCtrl.lon}}]"
+  zoom="8">
+
+  <marker
+    ng-repeat="address in locationsCtrl.locations"
+    position="{{ address.address }}, {{ address.city }}, {{ address.state }}"></marker>
+
+</ng-map>

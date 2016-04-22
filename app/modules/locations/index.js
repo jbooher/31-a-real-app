@@ -8,5 +8,6 @@ let locations = angular.module("jb.locations", []);
 
 locations.config(config);
 locations.controller("LocationsController", controller);
+locations.service("LocationsService", service);
 
 export default locations;
